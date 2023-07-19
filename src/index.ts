@@ -12,6 +12,11 @@ const mongoDbUri = process.env.MONGODB_URI!;
 
 if (!port || !mongoDbUri) process.exit(1);
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
+// app.use(cors({ credentials: true, origin: true }));
 app.use(express.json());
 app.use("/books", booksRoute);
 

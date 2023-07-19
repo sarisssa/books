@@ -8,4 +8,4 @@ const BookSchema = new Schema<IBook>({
   pubYear: { type: Date, required: true },
 });
 
-export const Book = model<IBook>("Books", BookSchema);
+export const BookModel = model<IBook>("Books", BookSchema);
