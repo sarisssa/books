@@ -16,9 +16,10 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   next();
 });
-// app.use(cors({ credentials: true, origin: true }));
 app.use(express.json());
 app.use("/books", booksRoute);
+
+// app.options("*", cors());
 
 async function main() {
   try {
